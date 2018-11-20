@@ -42,3 +42,7 @@ You don’t have to ever use `eject`. The curated feature set is suitable for sm
 You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
 
 To learn React, check out the [React documentation](https://reactjs.org/).
+
+## 技术栈介绍
+****
+react-router-dom@4处理路由，UI库使用antd，redux统一管理数据流，redux-saga管理异步调用，axios处理网络请求
