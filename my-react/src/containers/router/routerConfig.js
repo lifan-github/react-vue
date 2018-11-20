@@ -1,16 +1,16 @@
-import Home from '../home/Home';
+import Dashboard from '../dashboard/Dashboard';
 import Login from '../login/Login';
 import Error from '../error/Error';
 
 export const routerConfig = [
   {
     path: '/',
-    component: Home,
+    component: Dashboard,
     auth: true
   },
   {
-    path: '/home',
-    component: Home,
+    path: '/dashboard',
+    component: Dashboard,
     auth: true
   },
   {

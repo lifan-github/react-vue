@@ -1,0 +1,26 @@
+.inner-container{
+    height: 100%;
+    background-color: #fff;
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+}
+
+.dashboard-contianer{
+    display: flex;
+    flex: 1;
+    flex-direction: row;
+}
+
+.slider-nav-container{
+    width: 200px;
+    height: 100%;
+    border-right: 1px solid #ddd;
+}
+
+.right-switch-content{
+    display: flex;
+    flex: 1;
+    padding: 30px;
+    background-color: #fbfbfb;
+}
