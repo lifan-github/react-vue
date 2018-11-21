@@ -30,6 +30,13 @@ export default class Dashboard extends Component {
       {pathname: '/dashboard/orders'},
       {pathname: '/dashboard/specialOrders'},
       {pathname: '/dashboard/invoice'},
+      {pathname: '/dashboard/qudao'},
+      {pathname: '/dashboard/union'},
+      {pathname: '/dashboard/notice'},
+      {pathname: '/dashboard/integral'},
+      {pathname: '/dashboard/exchange'},
+      {pathname: '/dashboard/switchActivities'},
+      {pathname: '/dashboard/upImg'},
     ];
     for(let i = 0; i<all_url.length; i++){
       if(location_url === all_url[i].pathname){
@@ -41,7 +48,6 @@ export default class Dashboard extends Component {
   }
 
   render() {
-    console.log(this.props,'--------------');
     return (
       <div className="inner-container">
         <Header/>
@@ -53,37 +59,37 @@ export default class Dashboard extends Component {
             >
               <Menu.Item key="1">
                 <Link to={'/dashboard/orders'}>
-                  <Icon type="mail" />
+                  <Icon type="ordered-list" />
                   订单管理
                 </Link>
               </Menu.Item>
               <Menu.Item key="2">
                 <Link to={'/dashboard/specialOrders'}>
-                  <Icon type="calendar" />
+                  <Icon type="book" />
                   特殊订单
                 </Link>
               </Menu.Item>
               <Menu.Item key="3">
                 <Link to={'/dashboard/invoice'}>
-                  <Icon type="calendar" />
+                  <Icon type="diff" />
                   开票管理
                 </Link>
               </Menu.Item>
               <Menu.Item key="4">
                 <Link to={'/dashboard/qudao'}>
-                  <Icon type="calendar" />
+                  <Icon type="appstore" />
                   渠道管理
                 </Link>
               </Menu.Item>
               <Menu.Item key="5">
                 <Link to={'/dashboard/union'}>
-                  <Icon type="calendar" />
+                  <Icon type="flag" />
                   营销联盟
                 </Link>
               </Menu.Item>
               <Menu.Item key="6">
                 <Link to={'/dashboard/notice'}>
-                  <Icon type="calendar" />
+                  <Icon type="sound" />
                   官方公告
                 </Link>
               </Menu.Item>
@@ -95,19 +101,19 @@ export default class Dashboard extends Component {
               </Menu.Item>
               <Menu.Item key="8">
                 <Link to={'/dashboard/exchange'}>
-                  <Icon type="calendar" />
+                  <Icon type="sync" />
                   兑换管理
                 </Link>
               </Menu.Item>
               <Menu.Item key="9">
                 <Link to={'/dashboard/switchActivities'}>
-                  <Icon type="calendar" />
+                  <Icon type="box-plot" />
                   活动开关
                 </Link>
               </Menu.Item>
               <Menu.Item key="10">
                 <Link to={'/dashboard/upImg'}>
-                  <Icon type="calendar" />
+                  <Icon type="cloud-upload" />
                   上传图片
                 </Link>
               </Menu.Item>
@@ -115,7 +121,7 @@ export default class Dashboard extends Component {
           </div>
           <div className="right-switch-content">
             <Switch>
-              <Route path="/" exact component={Orders}/>{/*二级页面默认的显示页面*/}
+              <Route path="/" exact component={Orders}/>
               <Route path='/dashboard/orders' exact component={Orders} />
               <Route path='/dashboard/specialOrders' component={SpecialOrders} />
               <Route path='/dashboard/invoice' component={Invoice} />
