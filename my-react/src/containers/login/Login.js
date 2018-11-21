@@ -38,7 +38,7 @@ export default class Login extends Component {
       //code接口请求，成功后保存本地token标识
       localStorage.setItem("config_token","lifan");
       this.props.history.push({
-        pathname: '/home'
+        pathname: '/'
       });
       setTimeout(hide, 2000);
     }else{

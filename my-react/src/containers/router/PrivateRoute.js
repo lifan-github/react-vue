@@ -9,7 +9,7 @@ export default class PrivateRoute extends Component {
     const isLogin = localStorage.getItem('config_token')
 
     console.log(location,'location')
-    console.log(isLogin,'isLogin')
+    console.log(isLogin,'config_token')
     console.log(config,'config')
     // 如果该路由不用进行权限校验，登录状态下登陆页除外
     // 因为登陆后，无法跳转到登陆页

@@ -7,6 +7,7 @@ export default class Invoice extends Component {
   }
 
   render() {
+    console.log("发票")
     return (
       <div>hello 发票</div>
     )
