@@ -1,14 +1,24 @@
 import React, {Component} from 'react';
+import { withRouter } from "react-router-dom";
 import { Menu, Icon } from 'antd';
 import './header.css';
 
 const SubMenu = Menu.SubMenu;
 const MenuItemGroup = Menu.ItemGroup;
 
-export default class Header extends Component {
+class Header extends Component {
   constructor(props) {
     super(props);
     this.state = {
+
+    }
+  }
+
+  onClickItem(item){
+    if(item.key === 'setting:2'){
+      //清除本地缓存，并退出登录
+      localStorage.clear()
+      this.props.history.push("/login");
 
     }
   }
@@ -23,6 +33,7 @@ export default class Header extends Component {
         <div className="header-right">
           <Menu
             mode="horizontal"
+            onClick={(item) => this.onClickItem(item)}
           >
             <SubMenu title={<span className="submenu-title-wrapper"><Icon type="user" />用户中心 <Icon type="caret-down" /></span>}>
               <MenuItemGroup>
@@ -36,3 +47,5 @@ export default class Header extends Component {
     )
   }
 }
+
+export default withRouter(Header)

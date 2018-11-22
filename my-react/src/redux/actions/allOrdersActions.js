@@ -14,7 +14,7 @@ const myApi = axios.create({
 
 export function getAllOrders() {
   return dispatch => {
-    myApi.get(config.url, {
+     myApi.get(config.url, {
       params: {
         pageToken: 1,
         kw: config.kw,
@@ -22,22 +22,12 @@ export function getAllOrders() {
       }
     })
       .then(res => {
-        console.log(res,'res')
-        if(res.status === 200){
-          dispatch(updateOrders(res.data.data))
-        }
+        console.log(res,'res');
+        dispatch({type: types.GET_ALL_ORDERS, data: res.data.data}) //获取所有订单
       })
       .catch(err => {
         console.log(err,'err')
+        dispatch({type: types.GET_ALL_ORDERS_FAILED, data: err.message})
       })
-  }
-}
-
-
-//获取所有新闻
-export function updateOrders(data) {
-  return {
-    type: types.GET_ALL_ORDERS,
-    data
   }
 }

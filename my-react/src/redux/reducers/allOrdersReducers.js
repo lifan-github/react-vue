@@ -1,7 +1,6 @@
 import * as types from '../constant/actionTypes';
 
 
-
 let ordersInit = {
   allOrders: [],
 };
