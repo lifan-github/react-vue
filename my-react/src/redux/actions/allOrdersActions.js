@@ -1,29 +1,14 @@
 import * as types from '../constant/actionTypes';
 import config from "../../utils/config";
-import axios from 'axios';
 
-const myApi = axios.create({
-  baseURL: config.url,
-  timeout: 10000,
-  transformRequest: [(data) => JSON.stringify(data)],
-  headers: {
-    'Accept': 'application/json',
-    'Content-Type': 'application/json',
-  }
-});
-
-export function getAllOrders() {
+export function getAllOrders(data) {
   return dispatch => {
-     myApi.get(config.url, {
-      params: {
-        pageToken: 1,
-        kw: config.kw,
-        apikey: config.apikey
-      }
+    config.myApi.get(config.url + 'orders', {
+      params: data
     })
       .then(res => {
         console.log(res,'res');
-        dispatch({type: types.GET_ALL_ORDERS, data: res.data.data}) //获取所有订单
+        dispatch({type: types.GET_ALL_ORDERS, data: res.data}) //获取所有订单
       })
       .catch(err => {
         console.log(err,'err')

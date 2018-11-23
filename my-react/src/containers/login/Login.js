@@ -1,21 +1,12 @@
 import React, {Component} from 'react';
-import { Input, Button, message } from 'antd';
+import {connect} from "react-redux";
+import { Input, Button } from 'antd';
 import './login.css';
 
-
-const error = () => {
-  message.error('验证码输入不正确');
-};
-
-let hide;
-const loading = () => {
-  hide = message.loading('正在登录中...', 0);
-  //登录成功后调用影藏
-  // setTimeout(hide, 2500);
-};
+import {loginAction} from '../../redux/actions/loginActions';
 
 
-export default class Login extends Component {
+class Login extends Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -33,17 +24,7 @@ export default class Login extends Component {
   //登录请求
   loginFun(){
     const {code} = this.state;
-    if(parseInt(code) === 666){
-      loading();
-      //code接口请求，成功后保存本地token标识
-      localStorage.setItem("config_token","lifan");
-      this.props.history.push({
-        pathname: '/'
-      });
-      setTimeout(hide, 2000);
-    }else{
-      error()
-    }
+    this.props.dispatch(loginAction(code))
   }
 
   //登录按钮
@@ -76,3 +57,9 @@ export default class Login extends Component {
     )
   }
 }
+
+export default connect((state) => {
+  return {
+    loginInit: state.loginReducers
+  }
+})(Login)

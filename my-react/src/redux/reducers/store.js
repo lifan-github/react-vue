@@ -3,6 +3,7 @@ import thunk from 'redux-thunk';
 import logger from 'redux-logger';
 
 import allOrdersReducers from './allOrdersReducers';
+import loginReducers from './loginReducers';
 
 const middlewares = [
   thunk,
@@ -10,6 +11,7 @@ const middlewares = [
 ];
 
 const allReducers = combineReducers({
+  loginReducers,
   allOrdersReducers
 });
 

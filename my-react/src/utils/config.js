@@ -1,7 +1,20 @@
+import axios from "axios";
+
+const myApi =  axios.create({
+  baseURL: 'http://10.10.0.233:8084/admin/',
+  timeout: 10000,
+  transformRequest: [(data) => JSON.stringify(data)],
+  headers: {
+    'Accept': 'application/json',
+    'Content-Type': 'application/json',
+  }
+});
+
+
 const config = {
-  url: 'http://api01.idataapi.cn:8000/music/netease',
-  kw: 'Aimer',
-  apikey: 'yHzObkPcUMygr1Dy5mXtsApGvSxrzZsjWEdAgSt8wNDEvWAf5D7FOZWL2cRMwz0m'
+  url: 'http://10.10.0.233:8084/admin/',
+  myApi: myApi,
+  session: ''
 };
 
 export default config
