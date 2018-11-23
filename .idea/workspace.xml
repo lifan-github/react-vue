@@ -2,21 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="d3d651d4-de69-4b98-91d5-0de0aee31669" name="Default Changelist" comment="react-redux初步处理数据流搭建完毕">
-      <change afterPath="$PROJECT_DIR$/my-react/src/containers/orders/orders.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/my-react/src/redux/actions/loginActions.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/my-react/src/redux/reducers/loginReducers.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/my-react/src/utils/jsencrypt.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/my-react/src/utils/signature.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/my-react/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/my-react/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/my-react/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/my-react/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/my-react/src/containers/login/Login.js" beforeDir="false" afterPath="$PROJECT_DIR$/my-react/src/containers/login/Login.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/my-react/src/containers/orders/Orders.js" beforeDir="false" afterPath="$PROJECT_DIR$/my-react/src/containers/orders/Orders.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/my-react/src/containers/orders/orders.css" beforeDir="false" afterPath="$PROJECT_DIR$/my-react/src/containers/orders/orders.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/my-react/src/containers/specialOrders/SpecialOrders.js" beforeDir="false" afterPath="$PROJECT_DIR$/my-react/src/containers/specialOrders/SpecialOrders.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/my-react/src/redux/actions/allOrdersActions.js" beforeDir="false" afterPath="$PROJECT_DIR$/my-react/src/redux/actions/allOrdersActions.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/my-react/src/redux/constant/actionTypes.js" beforeDir="false" afterPath="$PROJECT_DIR$/my-react/src/redux/constant/actionTypes.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/my-react/src/redux/reducers/allOrdersReducers.js" beforeDir="false" afterPath="$PROJECT_DIR$/my-react/src/redux/reducers/allOrdersReducers.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/my-react/src/redux/reducers/store.js" beforeDir="false" afterPath="$PROJECT_DIR$/my-react/src/redux/reducers/store.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/my-react/src/utils/config.js" beforeDir="false" afterPath="$PROJECT_DIR$/my-react/src/utils/config.js" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -42,8 +33,8 @@
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
         <counts>
-          <entry key="css" value="13" />
-          <entry key="js" value="128" />
+          <entry key="css" value="14" />
+          <entry key="js" value="139" />
           <entry key="json" value="9" />
           <entry key="md" value="8" />
           <entry key="svg" value="1" />
@@ -51,25 +42,25 @@
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
-          <entry key="CSS" value="13" />
+          <entry key="CSS" value="14" />
           <entry key="JSON" value="9" />
-          <entry key="JavaScript" value="128" />
+          <entry key="JavaScript" value="139" />
           <entry key="PLAIN_TEXT" value="8" />
           <entry key="SVG" value="1" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="css" value="869" />
-          <entry key="js" value="6434" />
+          <entry key="css" value="901" />
+          <entry key="js" value="6838" />
           <entry key="md" value="290" />
           <entry key="txt" value="33" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="CSS" value="869" />
-          <entry key="JavaScript" value="6434" />
+          <entry key="CSS" value="901" />
+          <entry key="JavaScript" value="6838" />
           <entry key="PLAIN_TEXT" value="323" />
         </counts>
       </usages-collector>
@@ -78,10 +69,22 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/my-react/src/redux/actions/allOrdersActions.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="75">
+              <caret line="5" column="21" lean-forward="true" selection-start-line="5" selection-start-column="21" selection-end-line="5" selection-end-column="21" />
+              <folding>
+                <element signature="e#0#49#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/my-react/src/containers/orders/Orders.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="206">
-              <caret line="71" column="26" lean-forward="true" selection-start-line="71" selection-start-column="26" selection-end-line="71" selection-end-column="26" />
+            <state relative-caret-position="154">
+              <caret line="87" column="14" lean-forward="true" selection-start-line="87" selection-start-column="14" selection-end-line="87" selection-end-column="14" />
               <folding>
                 <element signature="e#0#39#0" expanded="true" />
               </folding>
@@ -92,8 +95,11 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/my-react/src/redux/reducers/allOrdersReducers.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="300">
-              <caret line="20" column="8" lean-forward="true" selection-start-line="20" selection-start-column="8" selection-end-line="20" selection-end-column="8" />
+            <state relative-caret-position="80">
+              <caret line="6" column="28" lean-forward="true" selection-start-line="6" selection-start-column="28" selection-end-line="6" selection-end-column="28" />
+              <folding>
+                <element signature="e#0#49#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -111,7 +117,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>propsModel</find>
       <find>login-input</find>
       <find>handleClick</find>
       <find>exact</find>
@@ -141,6 +146,7 @@
       <find>hide</find>
       <find>jsencrypt</find>
       <find>rowSelection</find>
+      <find>onChange</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -159,7 +165,6 @@
         <option value="$PROJECT_DIR$/my-react/src/components/header.css" />
         <option value="$PROJECT_DIR$/my-react/src/containers/dashboard/layout.css" />
         <option value="$PROJECT_DIR$/my-react/src/containers/orders/Order.js" />
-        <option value="$PROJECT_DIR$/my-react/src/containers/specialOrders/SpecialOrders.js" />
         <option value="$PROJECT_DIR$/my-react/src/containers/qudao/QuDao.js" />
         <option value="$PROJECT_DIR$/my-react/src/containers/union/Union.js" />
         <option value="$PROJECT_DIR$/my-react/src/containers/notice/Notice.js" />
@@ -175,8 +180,6 @@
         <option value="$PROJECT_DIR$/my-react/src/App.js" />
         <option value="$PROJECT_DIR$/my-react/src/containers/router/PrivateRoute.js" />
         <option value="$PROJECT_DIR$/my-react/src/components/Header.js" />
-        <option value="$PROJECT_DIR$/my-react/src/containers/orders/orders.css" />
-        <option value="$PROJECT_DIR$/my-react/src/redux/constant/actionTypes.js" />
         <option value="$PROJECT_DIR$/my-react/src/redux/reducers/store.js" />
         <option value="$PROJECT_DIR$/my-react/src/redux/reducers/loginReducers.js" />
         <option value="$PROJECT_DIR$/my-react/src/containers/login/Login.js" />
@@ -185,9 +188,12 @@
         <option value="$PROJECT_DIR$/my-react/src/utils/global.js" />
         <option value="$PROJECT_DIR$/my-react/src/utils/config.js" />
         <option value="$PROJECT_DIR$/my-react/src/redux/actions/loginActions.js" />
+        <option value="$PROJECT_DIR$/my-react/src/containers/orders/orders.css" />
+        <option value="$PROJECT_DIR$/my-react/src/redux/constant/actionTypes.js" />
         <option value="$PROJECT_DIR$/my-react/src/redux/actions/allOrdersActions.js" />
-        <option value="$PROJECT_DIR$/my-react/src/containers/orders/Orders.js" />
+        <option value="$PROJECT_DIR$/my-react/src/containers/specialOrders/SpecialOrders.js" />
         <option value="$PROJECT_DIR$/my-react/src/redux/reducers/allOrdersReducers.js" />
+        <option value="$PROJECT_DIR$/my-react/src/containers/orders/Orders.js" />
       </list>
     </option>
   </component>
@@ -219,9 +225,9 @@
     </packageJsonPaths>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="806" />
+    <option name="x" value="689" />
     <option name="y" value="23" />
-    <option name="width" value="1105" />
+    <option name="width" value="1166" />
     <option name="height" value="1057" />
   </component>
   <component name="ProjectInspectionProfilesVisibleTreeState">
@@ -269,43 +275,6 @@
               <item name="react-vue" type="462c0819:PsiDirectoryNode" />
               <item name="my-react" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="react-vue" type="b2602c69:ProjectViewProjectNode" />
-              <item name="react-vue" type="462c0819:PsiDirectoryNode" />
-              <item name="my-react" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="containers" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="react-vue" type="b2602c69:ProjectViewProjectNode" />
-              <item name="react-vue" type="462c0819:PsiDirectoryNode" />
-              <item name="my-react" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="redux" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="react-vue" type="b2602c69:ProjectViewProjectNode" />
-              <item name="react-vue" type="462c0819:PsiDirectoryNode" />
-              <item name="my-react" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="redux" type="462c0819:PsiDirectoryNode" />
-              <item name="actions" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="react-vue" type="b2602c69:ProjectViewProjectNode" />
-              <item name="react-vue" type="462c0819:PsiDirectoryNode" />
-              <item name="my-react" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="redux" type="462c0819:PsiDirectoryNode" />
-              <item name="reducers" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="react-vue" type="b2602c69:ProjectViewProjectNode" />
-              <item name="react-vue" type="462c0819:PsiDirectoryNode" />
-              <item name="my-react" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="utils" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -416,7 +385,7 @@
       <workItem from="1542721723219" duration="20801000" />
       <workItem from="1542860341938" duration="9898000" />
       <workItem from="1542940133687" duration="8535000" />
-      <workItem from="1542954104460" duration="5229000" />
+      <workItem from="1542954104460" duration="9161000" />
     </task>
     <task id="LOCAL-00001" summary="init">
       <created>1542679871290</created>
@@ -436,13 +405,13 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="62223000" />
+    <option name="totallyTimeSpent" value="66155000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="488" y="23" width="1114" height="1057" extended-state="0" />
+    <frame x="689" y="23" width="1166" height="1057" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.0" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.22969432" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -454,7 +423,7 @@
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Version Control" order="8" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Terminal" order="9" visible="true" weight="0.04041451" />
+      <window_info anchor="bottom" id="Terminal" order="9" visible="true" weight="0.10777202" />
       <window_info anchor="bottom" id="Event Log" order="10" side_tool="true" />
       <window_info anchor="right" id="Commander" order="0" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
@@ -528,13 +497,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="240">
           <caret line="16" column="17" lean-forward="true" selection-start-line="16" selection-start-column="17" selection-end-line="16" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/my-react/src/containers/specialOrders/SpecialOrders.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="135">
-          <caret line="9" selection-start-line="9" selection-end-line="10" />
         </state>
       </provider>
     </entry>
@@ -632,20 +594,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/my-react/src/containers/orders/orders.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="60">
-          <caret line="4" column="27" selection-start-line="4" selection-start-column="27" selection-end-line="4" selection-end-column="27" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/my-react/src/redux/constant/actionTypes.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="15">
-          <caret line="1" column="18" selection-start-line="1" selection-start-column="13" selection-end-line="1" selection-end-column="18" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/my-react/src/redux/reducers/store.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="120">
@@ -721,13 +669,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/my-react/src/utils/jsencrypt.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="16">
-          <caret line="5188" column="6" selection-start-line="5188" selection-start-column="6" selection-end-line="5188" selection-end-column="6" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/my-react/package.json">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="120">
@@ -742,9 +683,23 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/my-react/src/utils/config.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="75">
+          <caret line="5" column="53" lean-forward="true" selection-start-line="5" selection-start-column="53" selection-end-line="5" selection-end-column="53" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/my-react/src/utils/jsencrypt.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="16">
+          <caret line="5188" column="6" selection-start-line="5188" selection-start-column="6" selection-end-line="5188" selection-end-column="6" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/my-react/src/utils/signature.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="480">
+        <state relative-caret-position="399">
           <caret line="32" column="35" selection-start-line="32" selection-start-column="35" selection-end-line="32" selection-end-column="35" />
           <folding>
             <element signature="n#!!doc" expanded="true" />
@@ -753,27 +708,41 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/my-react/src/utils/config.js">
+    <entry file="file://$PROJECT_DIR$/my-react/src/containers/orders/orders.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="75">
-          <caret line="5" column="53" lean-forward="true" selection-start-line="5" selection-start-column="53" selection-end-line="5" selection-end-column="53" />
+        <state relative-caret-position="195">
+          <caret line="13" column="17" lean-forward="true" selection-start-line="13" selection-start-column="17" selection-end-line="13" selection-end-column="17" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/my-react/src/redux/actions/loginActions.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="420">
-          <caret line="28" column="56" lean-forward="true" selection-start-line="28" selection-start-column="56" selection-end-line="28" selection-end-column="56" />
+        <state relative-caret-position="75">
+          <caret line="5" column="21" lean-forward="true" selection-start-line="5" selection-start-column="21" selection-end-line="5" selection-end-column="21" />
           <folding>
             <element signature="e#0#40#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/my-react/src/redux/actions/allOrdersActions.js">
+    <entry file="file://$PROJECT_DIR$/my-react/src/redux/constant/actionTypes.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="75">
+          <caret line="5" column="26" selection-start-line="5" selection-start-column="13" selection-end-line="5" selection-end-column="26" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/my-react/src/containers/specialOrders/SpecialOrders.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="150">
-          <caret line="10" column="44" selection-start-line="10" selection-start-column="30" selection-end-line="10" selection-end-column="44" />
+          <caret line="10" column="28" selection-start-line="10" selection-start-column="28" selection-end-line="10" selection-end-column="28" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/my-react/src/redux/actions/allOrdersActions.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="75">
+          <caret line="5" column="21" lean-forward="true" selection-start-line="5" selection-start-column="21" selection-end-line="5" selection-end-column="21" />
           <folding>
             <element signature="e#0#49#0" expanded="true" />
           </folding>
@@ -782,8 +751,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/my-react/src/containers/orders/Orders.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="206">
-          <caret line="71" column="26" lean-forward="true" selection-start-line="71" selection-start-column="26" selection-end-line="71" selection-end-column="26" />
+        <state relative-caret-position="154">
+          <caret line="87" column="14" lean-forward="true" selection-start-line="87" selection-start-column="14" selection-end-line="87" selection-end-column="14" />
           <folding>
             <element signature="e#0#39#0" expanded="true" />
           </folding>
@@ -792,8 +761,11 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/my-react/src/redux/reducers/allOrdersReducers.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="300">
-          <caret line="20" column="8" lean-forward="true" selection-start-line="20" selection-start-column="8" selection-end-line="20" selection-end-column="8" />
+        <state relative-caret-position="80">
+          <caret line="6" column="28" lean-forward="true" selection-start-line="6" selection-start-column="28" selection-end-line="6" selection-end-column="28" />
+          <folding>
+            <element signature="e#0#49#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

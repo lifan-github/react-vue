@@ -8,7 +8,7 @@ export default class SpecialOrders extends Component {
 
   render() {
     return (
-      <div>hello SpecialOrders</div>
+      <div>特殊订单和订单管理中功能差不多☺☺</div>
     )
   }
 }

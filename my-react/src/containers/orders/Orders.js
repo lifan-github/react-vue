@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 import {connect} from "react-redux";
-import { Table, Button } from 'antd';
+import { Table, Button, Input } from 'antd';
 import { getAllOrders } from '../../redux/actions/allOrdersActions';
 import './orders.css';
 
@@ -69,7 +69,6 @@ class Orders extends Component {
   }
 
   componentDidMount(){
-    console.log('9999999')
     let param = {
       page: 1,
       limit: 10,
@@ -85,16 +84,33 @@ class Orders extends Component {
     this.props.dispatch(getAllOrders(param))
   }
 
+  //搜索订单框
+  onChange(e){
+    let value = e.target.value;
+    let param = {
+      page: 1,
+      limit: 10,
+      order_number: '',
+      sort_by: 'order_date',
+      keyword: value,
+      order_status: '',
+      shipping_status: '',
+      paymethod: '',
+      channel: '',
+      month: ''
+    };
+    this.props.dispatch(getAllOrders(param))
+  }
+
   render() {
     const {allOrders, hasOrders, table_config} = this.props.allOrders;
     console.log(table_config,'pagination')
     return (
       <div className="orders-container">
-        <div>
-          <Button type="primary">未发货</Button>
-          <Button>已发货</Button>
-          <Button>全部订单</Button>
+        <div className="top-action-container">
+          <Button type="primary">打印订单</Button>
           <Button>添加订单</Button>
+          <Input className="search-orders-input" placeholder="订单搜索" onChange={(e) => this.onChange(e)}/>
         </div>
         <Table {...table_config} rowKey={record => record.order_id} columns={columns} dataSource={hasOrders ? allOrders.data : null} />
       </div>

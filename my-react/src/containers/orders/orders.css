@@ -4,3 +4,12 @@
     overflow-y: scroll;
     background-color: #fff;
 }
+
+.top-action-container{
+    display: flex;
+    flex-direction: row;
+}
+
+.search-orders-input{
+    width: 240px;
+}
