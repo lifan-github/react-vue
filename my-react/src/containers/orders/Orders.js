@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 import {connect} from "react-redux";
-import { Table, Button, Input } from 'antd';
+import { Table, Button, Input, Pagination } from 'antd';
 import { getAllOrders } from '../../redux/actions/allOrdersActions';
 import './orders.css';
 
@@ -65,12 +65,21 @@ const columns = [{
 class Orders extends Component {
   constructor(props) {
     super(props);
-    this.state = {}
+    this.state = {
+      table_config: {
+        bordered: false,
+        size: 'middle',
+        rowSelection: {},
+        pagination: false
+      }
+    }
   }
 
   componentDidMount(){
+    const {allOrders} = this.props.allOrders;
+    const {cur_page = 1} = allOrders;
     let param = {
-      page: 1,
+      page: cur_page,
       limit: 10,
       order_number: '',
       sort_by: 'order_date',
@@ -102,17 +111,36 @@ class Orders extends Component {
     this.props.dispatch(getAllOrders(param))
   }
 
+  //切换页面
+  pageOnChange(page){
+    console.log(page,'cur_page')
+    let param = {
+      page: page,
+      limit: 10,
+      order_number: '',
+      sort_by: 'order_date',
+      keyword: '',
+      order_status: '',
+      shipping_status: '',
+      paymethod: '',
+      channel: '',
+      month: ''
+    };
+    this.props.dispatch(getAllOrders(param))
+
+  }
+
   render() {
-    const {allOrders, hasOrders, table_config} = this.props.allOrders;
-    console.log(table_config,'pagination')
+    const {allOrders, hasOrders} = this.props.allOrders;
     return (
       <div className="orders-container">
         <div className="top-action-container">
           <Button type="primary">打印订单</Button>
           <Button>添加订单</Button>
           <Input className="search-orders-input" placeholder="订单搜索" onChange={(e) => this.onChange(e)}/>
+          <Pagination defaultCurrent={allOrders.cur_page} total={allOrders.total_count} onChange={(page) => this.pageOnChange(page)}/>
         </div>
-        <Table {...table_config} rowKey={record => record.order_id} columns={columns} dataSource={hasOrders ? allOrders.data : null} />
+        <Table {...this.state.table_config} rowKey={record => record.order_id} columns={columns} dataSource={hasOrders ? allOrders.data : null} />
       </div>
     )
   }
