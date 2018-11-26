@@ -1,8 +1,13 @@
 import React, {Component} from 'react';
 import {connect} from "react-redux";
-import { Table, Button, Input, Pagination } from 'antd';
+import {Table, Button, Input, Pagination, message} from 'antd';
 import { getAllOrders } from '../../redux/actions/allOrdersActions';
+import PrintModal from './PrintModal';
 import './orders.css';
+
+const error = (msg) => {
+  message.error(msg);
+};
 
 const columns = [{
   title: '订单号',
@@ -66,12 +71,19 @@ class Orders extends Component {
   constructor(props) {
     super(props);
     this.state = {
+      //table基本配置
       table_config: {
         bordered: false,
         size: 'middle',
-        rowSelection: {},
+        rowSelection: {
+          type: 'checkbox'
+        },
         pagination: false
-      }
+      },
+      //modal打印订单配置
+      loading: false,
+      visible: false,
+      selectedRows: [], //存放需要打印的订单
     }
   }
 
@@ -113,7 +125,6 @@ class Orders extends Component {
 
   //切换页面
   pageOnChange(page){
-    console.log(page,'cur_page')
     let param = {
       page: page,
       limit: 10,
@@ -130,17 +141,79 @@ class Orders extends Component {
 
   }
 
+  //生成打印订单预览modal
+  showPrintModal(){
+    const { selectedRows } = this.state;
+    if(selectedRows.length > 0){
+      this.setState({
+        visible: true
+      });
+    }else{
+      error("没有需要打印的订单")
+    }
+  }
+
+  //取消
+  handleCancel = () => {
+    this.setState({ visible: false });
+  }
+
+  //确定打印
+  handleOk = () => {
+    this.setState({ loading: true });
+
+    setTimeout(() => {
+      this.setState({
+        visible: false,
+        loading: false
+      });
+    }, 3000);
+  }
+
+  //选择框
+  seletedOrders = (orders) => {
+    this.setState({
+      selectedRows: orders
+    })
+  }
+
   render() {
+    const that = this;
     const {allOrders, hasOrders} = this.props.allOrders;
+    const rowSelection = {
+      onSelect(record, selected, selectedRows) {
+        console.log(record, selected, selectedRows);
+        if(selected){
+          that.seletedOrders(selectedRows)
+        }
+      },
+      onSelectAll(selected, selectedRows, changeRows) {
+        console.log(selected, selectedRows, changeRows);
+        if(selected){
+          that.seletedOrders(selectedRows)
+        }
+      }
+    };
     return (
       <div className="orders-container">
         <div className="top-action-container">
-          <Button type="primary">打印订单</Button>
+          <Button type="primary" onClick={() => this.showPrintModal()}>打印订单</Button>
+          <PrintModal
+            visible={this.state.visible}
+            loading={this.state.loading}
+            handleCancel={this.handleCancel}
+            printData={this.state.selectedRows}
+            handleOk={this.handleOk}/>
           <Button>添加订单</Button>
           <Input className="search-orders-input" placeholder="订单搜索" onChange={(e) => this.onChange(e)}/>
           <Pagination defaultCurrent={allOrders.cur_page} total={allOrders.total_count} onChange={(page) => this.pageOnChange(page)}/>
         </div>
-        <Table {...this.state.table_config} rowKey={record => record.order_id} columns={columns} dataSource={hasOrders ? allOrders.data : null} />
+        <Table
+          {...this.state.table_config}
+          rowKey={record => record.order_id}
+          columns={columns}
+          rowSelection={rowSelection}
+          dataSource={hasOrders ? allOrders.data : null} />
       </div>
     )
   }

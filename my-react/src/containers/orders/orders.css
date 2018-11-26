@@ -13,3 +13,64 @@
 .search-orders-input{
     width: 240px;
 }
+
+.table-header{
+    display: flex;
+    background-color: #f5f5f5;
+    color: #333;
+    padding: 10px 0;
+}
+
+.table-header span{
+    text-align: center;
+}
+
+.modal-list-box{
+    display: flex;
+    flex-direction: row;
+    border-top: 1px solid #ececec;
+    padding: 5px 0;
+}
+
+.modal-list-box span{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    word-break: break-all;
+}
+
+.header-ordernum{
+    width: 15%;
+}
+
+.header-time{
+    width: 10%;
+}
+
+.header-num{
+    width: 4%;
+}
+
+.header-way{
+    width: 6%;
+}
+
+.header-name{
+    width: 10%;
+}
+
+.header-tel{
+    width: 15%;
+}
+
+.header-addrees{
+    width: 20%;
+}
+
+.header-status{
+    width: 10%;
+}
+
+.header-editor{
+    width: 10%;
+}
