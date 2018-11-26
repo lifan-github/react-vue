@@ -160,14 +160,7 @@ class Orders extends Component {
 
   //确定打印
   handleOk = () => {
-    this.setState({ loading: true });
-
-    setTimeout(() => {
-      this.setState({
-        visible: false,
-        loading: false
-      });
-    }, 3000);
+    window.print();
   }
 
   //选择框
@@ -183,15 +176,11 @@ class Orders extends Component {
     const rowSelection = {
       onSelect(record, selected, selectedRows) {
         console.log(record, selected, selectedRows);
-        if(selected){
-          that.seletedOrders(selectedRows)
-        }
+        that.seletedOrders(selectedRows)
       },
       onSelectAll(selected, selectedRows, changeRows) {
         console.log(selected, selectedRows, changeRows);
-        if(selected){
-          that.seletedOrders(selectedRows)
-        }
+        that.seletedOrders(selectedRows)
       }
     };
     return (

@@ -1,0 +1,28 @@
+.container{
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+}
+
+.scroll-box{
+    overflow-y: scroll;
+}
+
+.notice-top-manage{
+    width: 100%;
+    height: 80px;
+    background-color: #fff;
+    display: flex;
+    align-items: center;
+    padding-left: 30px;
+}
+
+.notice-list{
+    background-color: #fff;
+    margin-top: 20px;
+    padding: 30px;
+}
+
+.notice-input{
+    margin-bottom: 20px;
+}

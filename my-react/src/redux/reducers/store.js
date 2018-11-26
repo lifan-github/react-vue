@@ -2,8 +2,9 @@ import {combineReducers , createStore, applyMiddleware} from 'redux';
 import thunk from 'redux-thunk';
 import logger from 'redux-logger';
 
-import allOrdersReducers from './allOrdersReducers';
 import loginReducers from './loginReducers';
+import allOrdersReducers from './allOrdersReducers';
+import noticeReducers from './noticeReducers';
 
 const middlewares = [
   thunk,
@@ -12,7 +13,8 @@ const middlewares = [
 
 const allReducers = combineReducers({
   loginReducers,
-  allOrdersReducers
+  allOrdersReducers,
+  noticeReducers
 });
 
 const createStoreWithMiddleware = applyMiddleware(...middlewares)(createStore);
