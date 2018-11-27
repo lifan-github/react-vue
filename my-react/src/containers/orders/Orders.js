@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 import {connect} from "react-redux";
-import {Table, Button, Input, Pagination, message} from 'antd';
+import {Table, Button, Input, Pagination, message, Menu, Dropdown, Icon} from 'antd';
 import { getAllOrders } from '../../redux/actions/allOrdersActions';
 import PrintModal from './PrintModal';
 import './orders.css';
@@ -66,6 +66,18 @@ const columns = [{
   render: () => <div>编辑、详情</div>
 }
 ];
+
+const menu = (
+  <Menu onClick={handleMenuClick}>
+    <Menu.Item key="1">未发货</Menu.Item>
+    <Menu.Item key="2">已发货</Menu.Item>
+  </Menu>
+);
+
+function handleMenuClick(e) {
+  message.info('Click on menu item.');
+  console.log('click', e);
+}
 
 class Orders extends Component {
   constructor(props) {
@@ -191,14 +203,21 @@ class Orders extends Component {
     return (
       <div className="orders-container">
         <div className="top-action-container">
-          <Button type="primary" onClick={() => this.showPrintModal()}>打印订单</Button>
-          <PrintModal
-            visible={this.state.visible}
-            loading={this.state.loading}
-            handleCancel={this.handleCancel}
-            printData={this.state.selectedRows}
-            handleOk={this.handleOk}/>
-          <Button onClick={this.addOrders}>添加订单</Button>
+          <div>
+            <Button type="primary" onClick={() => this.showPrintModal()}>打印订单</Button>
+            <PrintModal
+              visible={this.state.visible}
+              loading={this.state.loading}
+              handleCancel={this.handleCancel}
+              printData={this.state.selectedRows}
+              handleOk={this.handleOk}/>
+            <Button className="add-order-button" onClick={this.addOrders}>添加订单</Button>
+            <Dropdown overlay={menu}>
+              <Button style={{ marginLeft: 8 }}>
+                全部订单 <Icon type="down" />
+              </Button>
+            </Dropdown>
+          </div>
           <Input className="search-orders-input" placeholder="订单搜索" onChange={(e) => this.onChange(e)}/>
           <Pagination defaultCurrent={allOrders.cur_page} total={allOrders.total_count} onChange={(page) => this.pageOnChange(page)}/>
         </div>
