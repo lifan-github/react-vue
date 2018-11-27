@@ -51,7 +51,7 @@ class Login extends Component {
             onChange={(e) => this.bindOnChange(e)}
             ref={node => this.codeInput = node}
             onPressEnter={() => this.onPressEnter()}/>
-          <Button type="primary" block onClick={() => this.loginButton()}>登录</Button>
+          <Button className="login-button" type="primary" block onClick={() => this.loginButton()}>登录</Button>
         </div>
       </div>
     )
