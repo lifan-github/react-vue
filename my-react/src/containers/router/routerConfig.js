@@ -15,6 +15,16 @@ export const routerConfig = [
     auth: true
   },
   {
+    path: '/dashboard/orders/addOrder', //添加订单
+    component: Dashboard,
+    auth: true
+  },
+  {
+    path: '/dashboard/orders/addOrder/orderDetail', //三级路由
+    component: Dashboard,
+    auth: true
+  },
+  {
     path: '/dashboard/specialOrders', //特殊订单
     component: Dashboard,
     auth: true

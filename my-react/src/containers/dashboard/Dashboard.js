@@ -6,6 +6,8 @@ import './layout.css';
 
 
 import Orders from '../../containers/orders/Orders';
+import AddOrder from '../../containers/orders/AddOrder';
+import OrderDetail from '../../containers/orders/OrderDetail';
 import SpecialOrders from '../../containers/specialOrders/SpecialOrders';
 import Invoice from '../../containers/invoice/Invoice';
 import QuDao from '../../containers/qudao/QuDao';
@@ -123,6 +125,8 @@ export default class Dashboard extends Component {
             <Switch>
               <Route path="/" exact component={Orders}/>
               <Route path='/dashboard/orders' exact component={Orders} />
+              <Route path='/dashboard/orders/addOrder' exact component={AddOrder} />
+              <Route path='/dashboard/orders/addOrder/orderDetail' exact component={OrderDetail} />
               <Route path='/dashboard/specialOrders' component={SpecialOrders} />
               <Route path='/dashboard/invoice' component={Invoice} />
               <Route path='/dashboard/qudao' component={QuDao} />

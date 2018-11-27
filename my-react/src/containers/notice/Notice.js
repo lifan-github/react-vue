@@ -4,7 +4,6 @@ import { Button, Radio } from 'antd';
 import './notice.css';
 import { getAllNotice } from '../../redux/actions/allNoticeActions';
 import NoticeModal from './NoticeModal';
-import PrintModal from "../orders/PrintModal";
 const RadioGroup = Radio.Group;
 
 

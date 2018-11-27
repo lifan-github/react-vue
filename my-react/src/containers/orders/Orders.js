@@ -170,6 +170,11 @@ class Orders extends Component {
     })
   }
 
+  //添加订单
+  addOrders = () => {
+    this.props.history.push('/dashboard/orders/addOrder')
+  }
+
   render() {
     const that = this;
     const {allOrders, hasOrders} = this.props.allOrders;
@@ -193,7 +198,7 @@ class Orders extends Component {
             handleCancel={this.handleCancel}
             printData={this.state.selectedRows}
             handleOk={this.handleOk}/>
-          <Button>添加订单</Button>
+          <Button onClick={this.addOrders}>添加订单</Button>
           <Input className="search-orders-input" placeholder="订单搜索" onChange={(e) => this.onChange(e)}/>
           <Pagination defaultCurrent={allOrders.cur_page} total={allOrders.total_count} onChange={(page) => this.pageOnChange(page)}/>
         </div>
