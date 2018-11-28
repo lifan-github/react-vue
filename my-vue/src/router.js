@@ -1,8 +1,23 @@
 import Vue from 'vue'
 import Router from 'vue-router'
-import Home from './views/Home.vue'
+import Login from './views/Login.vue'
+import Error from './components/Error.vue'
+import Dashboard from './views/Dashboard.vue'
+import Orders from './views/orders/Orders.vue'
+import SpecialOrders from './views/specialOrders/SpecialOrders.vue'
+import Invoice from './views/invoice/Invoice.vue'
 
-Vue.use(Router)
+Vue.use(Router);
+
+
+const checkToken = (to, from, next) => {
+  const token = localStorage.getItem('token');
+  if(token){
+    next();
+  }else{
+    window.location.href = '/';
+  }
+};
 
 export default new Router({
   mode: 'history',
@@ -10,16 +25,42 @@ export default new Router({
   routes: [
     {
       path: '/',
-      name: 'home',
-      component: Home
+      name: 'login',
+      component: Login
     },
     {
-      path: '/about',
-      name: 'about',
-      // route level code-splitting
-      // this generates a separate chunk (about.[hash].js) for this route
-      // which is lazy-loaded when the route is visited.
-      component: () => import(/* webpackChunkName: "about" */ './views/About.vue')
+      path: '/dashboard',
+      name: 'dashboard',
+      component: Dashboard,
+      redirect: '/dashboard/orders', //子页面默认显示的页面
+      children: [
+        {
+          path: '/dashboard/orders',
+          name: 'orders',
+          component: Orders,
+          beforeEnter: checkToken
+        },
+        {
+          path: '/dashboard/specialOrders',
+          name: 'specialOrders',
+          component: SpecialOrders,
+          beforeEnter: checkToken
+        },
+        {
+          path: '/dashboard/invoice',
+          name: 'invoice',
+          component: Invoice,
+          beforeEnter: checkToken
+        },
+      ]
+    },
+    {//注册找不到页面
+      path: '/error',
+      name: 'error',
+      component: Error
+    },
+    {//找不到路由，进入404页面
+      path: '/*', redirect: '/error'
     }
   ]
 })
