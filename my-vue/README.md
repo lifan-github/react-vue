@@ -19,3 +19,9 @@ npm run build
 ```
 npm run lint
 ```
+
+## 技术栈简介：
+* Vue.js框架
+* Vue-router处理路由
+* Vuex 管理数据流
+* axios 网络请求
