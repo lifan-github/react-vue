@@ -7,12 +7,12 @@
 </template>
 
 <script>
-  import store from '../../store/Store'
+  import store from '../../store/index'
   export default {
     name: "Orders",
     computed: {
       count(){
-        return store.state.count
+        return store.state.orderModule.count
       }
     },
     methods: {

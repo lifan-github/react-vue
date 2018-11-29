@@ -1,8 +1,5 @@
-import Vue from "vue";
-import Vuex from 'vuex';
-Vue.use(Vuex);
 
-const store = new Vuex.Store({
+const Order = {
   state: {
     count: 0
   },
@@ -10,6 +7,6 @@ const store = new Vuex.Store({
     increment: state => state.count++,
     decrement: state => state.count--
   }
-});
+};
 
-export default store
+export default Order
