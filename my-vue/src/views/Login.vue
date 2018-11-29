@@ -1,7 +1,7 @@
 <template>
   <div id="container">
     <div id="login-container">
-      <input class="code-input" type="text" placeholder="请输入验证码">
+      <el-input class="code-input" v-model="input" placeholder="请输入验证码"></el-input>
       <div id="login-button" @click="goToHome">登录</div>
     </div>
   </div>
@@ -10,11 +10,21 @@
 <script>
   export default {
     name: "Login",
+    data(){
+      return {
+        input: ''
+      }
+    },
     methods: {
       goToHome(){
-        console.log("登录按钮");
-        localStorage.setItem("token", 'lifan888')
-        this.$router.push({name: 'dashboard'})
+        const code = this.input;
+        if(code){
+          console.log(this.input,"登录按钮");
+          //触发登录事件
+          this.$store.dispatch('loginButtonApi', {code: code});
+        }else{
+          this.$message.error('请输入正确的验证码');
+        }
       }
     }
   }

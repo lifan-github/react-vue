@@ -1,27 +1,34 @@
 <template>
   <div>
-    <div>{{count}}</div>
-    <button @click="increment">+</button>
-    <button @click="decrement">-</button>
+    <div>orders</div>
+    <ol>
+      <li v-for="item in orderList">
+        {{item.title}}
+      </li>
+    </ol>
   </div>
 </template>
 
 <script>
-  import store from '../../store/index'
   export default {
     name: "Orders",
-    computed: {
-      count(){
-        return store.state.orderModule.count
+    data(){
+      return {
+
       }
     },
-    methods: {
-      increment () {
-        store.commit('increment')
-      },
-      decrement () {
-        store.commit('decrement')
+    computed: {
+      orderList(){
+        return this.$store.state.orderModule.orders
       }
+    },
+    created(){
+      console.log("组件加载did");
+      //触发一个事件
+      // this.$store.dispatch('getAllOrdersApi');
+    },
+    methods: {
+
     }
   }
 </script>
