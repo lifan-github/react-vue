@@ -20,7 +20,7 @@
         const code = this.input;
         if(code){
           console.log(this.input,"登录按钮");
-          //触发登录事件
+          //触发登录事件, 提示组件不能全局使用，所以只能把改方法传递过去
           this.$store.dispatch('loginButtonApi', {code: code});
         }else{
           this.$message.error('请输入正确的验证码');
