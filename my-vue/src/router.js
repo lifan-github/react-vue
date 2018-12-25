@@ -10,6 +10,7 @@ import Invoice from './views/invoice/Invoice.vue'
 Vue.use(Router);
 
 
+//路由守卫
 const checkToken = (to, from, next) => {
   const token = localStorage.getItem('token');
   if(token){

@@ -17,6 +17,9 @@
     },
     methods: {
       goToHome(){
+        //直接进入内页的话，先影藏下面触发事件代码，并去掉路由配置中的路由守卫
+        // this.$router.push('/dashboard');
+
         const code = this.input;
         if(code){
           console.log(this.input,"登录按钮");

@@ -9,6 +9,7 @@ import store from './store/index';
 Vue.config.productionTip = false;
 Vue.use(ElementUI, {locale});
 
+
 new Vue({
   router,
   store,
